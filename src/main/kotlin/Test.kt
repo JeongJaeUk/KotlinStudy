@@ -1,6 +1,6 @@
+import Chapter2.fibo
+
 fun main() {
-    println("hello kotlin")
+    println(fibo(8))
 }
 
-class Test {
-}
