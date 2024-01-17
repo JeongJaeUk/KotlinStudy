@@ -28,9 +28,18 @@ fun <A> isSorted(aa: List<A>, order: (A, A) -> Boolean): Boolean {
 }
 
 // 2.3
-
+fun <A, B, C> curry(f: (A, B) -> C): (A) -> (B) -> C = {
+    a: A -> {
+        b: B -> f(a, b)
+    }
+}
 
 // 2.4
-
+fun <A, B, C> uncurry(f: (A) -> (B) -> C): (A, B) -> C = {
+    a: A, b: B -> f(a)(b)
+}
 
 // 2.5
+fun <A, B, C> compose(f: (B) -> C, g: (A) -> B): (A) -> C = {
+    a: A -> f(g(a))
+}
